@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos\\4_DESARROLLOS\\enterprises-test\\enterprises-test\\enterprises-test.csproj": {}
+    "D:\\desarrollos\\enterprises-test\\enterprises-test\\enterprises-test.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos\\4_DESARROLLOS\\enterprises-test\\enterprises-test\\enterprises-test.csproj": {
+    "D:\\desarrollos\\enterprises-test\\enterprises-test\\enterprises-test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos\\4_DESARROLLOS\\enterprises-test\\enterprises-test\\enterprises-test.csproj",
+        "projectUniqueName": "D:\\desarrollos\\enterprises-test\\enterprises-test\\enterprises-test.csproj",
         "projectName": "enterprises-test",
-        "projectPath": "D:\\Proyectos\\4_DESARROLLOS\\enterprises-test\\enterprises-test\\enterprises-test.csproj",
-        "packagesPath": "C:\\Users\\sandr\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos\\4_DESARROLLOS\\enterprises-test\\enterprises-test\\obj\\",
+        "projectPath": "D:\\desarrollos\\enterprises-test\\enterprises-test\\enterprises-test.csproj",
+        "packagesPath": "C:\\Users\\SEnriquez\\.nuget\\packages\\",
+        "outputPath": "D:\\desarrollos\\enterprises-test\\enterprises-test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sandr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SEnriquez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
@@ -85,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.120\\RuntimeIdentifierGraph.json"
         }
       }
     }
