@@ -5,7 +5,7 @@ namespace enterprises_test.Services.Interfaces
 {
     public interface IEnterpriseService
     {
-        Task<PagedDataVMR<Enterprise>> GetAll(int? size, int? pageNumber);
+        Task<PagedDataVMR<Enterprise>> GetAll(int? size, int? pageNumber, string textFilter);
         Task<Enterprise> GetById(long id);
 
         Task Post(Enterprise item);

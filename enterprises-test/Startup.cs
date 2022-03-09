@@ -42,7 +42,7 @@ namespace enterprises_test
             services.AddScoped<IEnterpriseService, EnterpriseService>();
             services.AddScoped<IDepartmentService, DepartmentService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
-            services.AddScoped<IDepartmentEmployeeService, DepartmentEmployeeService>();
+            services.AddScoped<IDepartmentEmployeeService, DepartmentsEmployees>();
 
             services.AddControllers();
             AddSwagger(services);

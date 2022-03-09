@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace enterprises_test.Services
 {
-    public class DepartmentEmployeeService : IDepartmentEmployeeService
+    public class DepartmentsEmployees : IDepartmentEmployeeService
     {
         readonly testContext context;
 
-        public DepartmentEmployeeService(testContext _context)
+        public DepartmentsEmployees(testContext _context)
         {
             context = _context;
         }

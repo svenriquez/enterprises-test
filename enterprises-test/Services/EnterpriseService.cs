@@ -18,7 +18,7 @@ namespace enterprises_test.Services
             context = _context;
         }
 
-        public async Task<PagedDataVMR<Enterprise>> GetAll(int? pageSize, int? page)
+        public async Task<PagedDataVMR<Enterprise>> GetAll(int? pageSize, int? page, string textFilter)
         {
             PagedDataVMR<Enterprise> result = new PagedDataVMR<Enterprise>();
 
@@ -35,6 +35,13 @@ namespace enterprises_test.Services
                     Name = x.Name,
                     Phone = x.Phone
                 });
+
+                if (!String.IsNullOrWhiteSpace(textFilter))
+                {
+                    query = query.Where(x => x.Name.ToLower().Contains(textFilter.ToLower())
+                    || x.Address.ToLower().Contains(textFilter.ToLower())
+                    || x.Phone.ToLower().Contains(textFilter.ToLower()));
+                }
 
                 result.total = query.Count();
 

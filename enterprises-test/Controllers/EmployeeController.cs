@@ -23,12 +23,12 @@ namespace enterprises_test.Controllers
 
         [HttpGet]
         [Route("get-all")]
-        public async Task<ActionResult<PagedDataVMR<Employee>>> GetAll(int? size, int? pageNumber)
+        public async Task<ActionResult<PagedDataVMR<EmployeeVMR>>> GetAll(int? size, int? pageNumber, string textFilter)
         {
             try
             {
-                PagedDataVMR<Employee> result = new PagedDataVMR<Employee>();
-                result = await EmployeeService.GetAll(size, pageNumber);
+                PagedDataVMR<EmployeeVMR> result = new PagedDataVMR<EmployeeVMR>();
+                result = await EmployeeService.GetAll(size, pageNumber, textFilter);
 
                 return result;
             }
@@ -40,12 +40,29 @@ namespace enterprises_test.Controllers
 
         [HttpGet]
         [Route("get-by-id/{id}")]
-        public async Task<ActionResult<Employee>> GetById(long id)
+        public async Task<ActionResult<EmployeeVMR>> GetById(long id)
         {
             try
             {
-                Employee item = new Employee();
+                EmployeeVMR item = new EmployeeVMR();
                 item = await EmployeeService.GetById(id);
+
+                return item;
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensaje = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("get-form-data")]
+        public async Task<ActionResult<EmployeeFormDataVMR>> GetFormData(long? id)
+        {
+            try
+            {
+                EmployeeFormDataVMR item = new EmployeeFormDataVMR();
+                item = await EmployeeService.GetFormData(id);
 
                 return item;
             }

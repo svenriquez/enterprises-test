@@ -23,12 +23,12 @@ namespace enterprises_test.Controllers
 
         [HttpGet]
         [Route("get-all")]
-        public async Task<ActionResult<PagedDataVMR<Enterprise>>> GetAll(int? size, int? pageNumber)
+        public async Task<ActionResult<PagedDataVMR<Enterprise>>> GetAll(int? size, int? pageNumber, string textFilter)
         {
             try
             {
                 PagedDataVMR<Enterprise> result = new PagedDataVMR<Enterprise>();
-                result = await EnterpriseService.GetAll(size, pageNumber);
+                result = await EnterpriseService.GetAll(size, pageNumber, textFilter);
 
                 return result;
             }

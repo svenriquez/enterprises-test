@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using enterprises_test.Models.ViewModels;
 using enterprises_test.Services.Interfaces;
@@ -23,12 +24,12 @@ namespace enterprises_test.Controllers
 
         [HttpGet]
         [Route("get-all")]
-        public async Task<ActionResult<PagedDataVMR<Department>>> GetAll(int? size, int? pageNumber)
+        public async Task<ActionResult<PagedDataVMR<Department>>> GetAll(int? size, int? pageNumber, string textFilter)
         {
             try
             {
                 PagedDataVMR<Department> result = new PagedDataVMR<Department>();
-                result = await DepartmentService.GetAll(size, pageNumber);
+                result = await DepartmentService.GetAll(size, pageNumber, textFilter);
 
                 return result;
             }
@@ -48,6 +49,40 @@ namespace enterprises_test.Controllers
                 item = await DepartmentService.GetById(id);
 
                 return item;
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensaje = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("get-form-data")]
+        public async Task<ActionResult<DepartmentFormDataVMR>> GetFormData(long? id)
+        {
+            try
+            {
+                DepartmentFormDataVMR item = new DepartmentFormDataVMR();
+                item = await DepartmentService.GetFormData(id);
+
+                return item;
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensaje = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("get-departments-by-idEnterprise/{id}")]
+        public async Task<ActionResult<List<Department>>> GetDepartmentsByIdEnterprise(long id)
+        {
+            try
+            {
+                List<Department> resp = new List<Department>();
+                resp = await DepartmentService.GetDepartmentsByIdEnterprise(id);
+
+                return resp;
             }
             catch (Exception ex)
             {
